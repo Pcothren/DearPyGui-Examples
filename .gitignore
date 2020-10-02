@@ -4,5 +4,6 @@
 !*.png
 !*.jpg
 !.gitignore
+!requirements.txt
 !README.md
 !LICENSE
