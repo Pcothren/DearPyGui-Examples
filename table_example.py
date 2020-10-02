@@ -40,6 +40,6 @@ for i in range(0, 10):
         row.append("Item" + str(i) + "-" + str(j))
     tabledata.append(row)
 
-set_value("Table##widget", tabledata)
+set_table_data("Table##widget", tabledata)
 
 start_dearpygui()
