@@ -1,9 +1,11 @@
 from dearpygui.core import *
 from dearpygui.simple import *
 
+
 def update_drawing(sender, data):
     set_drawing_origin("drawing##widget", get_value("X Origin"), get_value("Y Origin"))
     set_drawing_scale("drawing##widget", get_value("X Scale "), get_value("Y Scale"))
+
 
 with group("Drawing Controls Group"):
     add_slider_float("X Origin", vertical=True, min_value=-100, max_value=100, default_value=0, callback=update_drawing)

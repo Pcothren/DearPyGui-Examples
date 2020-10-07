@@ -1,6 +1,7 @@
 from dearpygui.core import *
 from dearpygui.simple import *
 
+
 # callback
 def retrieve_values(sender, data):
     show_logger()
@@ -41,6 +42,7 @@ def retrieve_values(sender, data):
     log_info("Color Picker4: " + str(get_value("Color Picker4##widget")))
     log_info("Tab Bar: " + str(get_value("Tab Bar##widget")))
 
+
 set_main_window_size(800, 800)
 
 add_button("Get Widget Values", callback=retrieve_values)
@@ -53,12 +55,12 @@ with tab_bar("Tab Bar##widget"):
         add_combo("Combo##widget", items=["Item 1", "Item 2", "item 3"])
         add_radio_button("Radio Button##widget", items=["Item 1", "Item 2", "item 3"])
         add_listbox("Listbox##widget", items=["Item 1", "Item 2", "item 3"])
-        add_progress_bar("Progress Bar##widget", 0.45, overlay="Progress Bar")
+        add_progress_bar("Progress Bar##widget", default_value=0.45, overlay="Progress Bar")
 
         add_text("Text")
         add_selectable("Selectable##widget")
         add_input_text("Input Text##widget")
-        add_label_text("Label Text##123", value="value")
+        add_label_text("Label Text##123", default_value="value")
 
         add_color_edit3("Color Edit3##widget")
         add_color_edit4("Color Edit4##widget")

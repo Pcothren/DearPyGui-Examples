@@ -3,6 +3,7 @@ from dearpygui.simple import *
 
 set_main_window_size(500, 500)
 
+
 # callback
 def retrieve_callback(sender, callback):
 
@@ -17,8 +18,9 @@ def retrieve_callback(sender, callback):
     log_info(get_value("Password##inputtext"))
     log_info(get_value("Multiline##inputtext"))
 
+
 add_text("This example demonstrates the input text widget.", bullet=True)
-add_text("Press the 'Retrieve' button to display the inputed values in the logger", wrap = 500, bullet=True)
+add_text("Press the 'Retrieve' button to display the input values in the logger", wrap=500, bullet=True)
 
 add_input_text("Regular##inputtext")
 add_input_text("With hint##inputtext", hint="A hint")

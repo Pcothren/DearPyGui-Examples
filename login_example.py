@@ -1,6 +1,7 @@
 from dearpygui.core import *
 from dearpygui.simple import *
 
+
 def recursively_show(container):
     for item in get_item_children(container):
         if get_item_children(item):
@@ -8,6 +9,7 @@ def recursively_show(container):
             recursively_show(item)
         else:
             show_item(item)
+
 
 def try_login(sender, data):
     print(sender)
@@ -18,12 +20,18 @@ def try_login(sender, data):
     else:
         show_item('Incorrect Password.')
 
+
 def position_login_window(sender, data):
-    main_width = get_item_width('MainWindow')
-    main_height = get_item_height('MainWindow')
-    login_width = get_item_width('Login Window')
-    login_height = get_item_height('Login Window')
-    set_window_pos('Login Window', int((main_width/2 - login_width/2)), int((main_height/2 - login_height/2)))
+    if does_item_exist('Login Window'):
+        main_width = get_item_width('MainWindow')
+        main_height = get_item_height('MainWindow')
+        login_width = get_item_width('Login Window')
+        login_height = get_item_height('Login Window')
+        set_window_pos('Login Window', int((main_width/2 - login_width/2)), int((main_height/2 - login_height/2)))
+    else:
+        # this replaces the callback with None so we dont waste resources running the login window position callback
+        set_render_callback(None)
+
 
 with window('Login Window', no_title_bar=True, autosize=True, no_resize=True):
     add_input_text('Password', hint='hover me for password', password=True, tip='the password is "password"')

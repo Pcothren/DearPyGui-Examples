@@ -1,36 +1,44 @@
 from dearpygui.core import *
 from dearpygui.simple import *
 
+
 # callbacks
-def ClearTable(sender, data):
+def clear_table_call(sender, data):
     clear_table("Table##widget")
 
-def DeleteRow(sender, data):
+
+def delete_row_call(sender, data):
     delete_row("Table##widget", 6)
 
-def DeleteCol(sender, data):
+
+def delete_col_call(sender, data):
     delete_column("Table##widget", 1)
 
-def AddRow(sender, data):
+
+def add_row_call(sender, data):
     add_row("Table##widget", ["new1", "new2", "new3", 53])
 
-def AddCol(sender, data):
+
+def add_col_call(sender, data):
     add_column("Table##widget", "New Column", ["new1", "new2", "new3", "new4"])
 
-def InsertRow(sender, data):
+
+def insert_row_call(sender, data):
     insert_row("Table##widget", 5, ["inew1", "inew2", "inew3", "inew4"])
 
-def InsertCol(sender, data):
+
+def insert_col_call(sender, data):
     insert_column("Table##widget", 1, "Inserted Column", ["inew1", "inew2", "inew3", "inew4"])
 
+
 # tables
-add_button("Delete row 6", callback=DeleteRow)
-add_button("Delete col 1", callback=DeleteCol)
-add_button("Add row ", callback=AddRow)
-add_button("Add col ", callback=AddCol)
-add_button("Insert row 5", callback=InsertRow)
-add_button("Insert col 1 ", callback=InsertCol)
-add_button("Clear Table ", callback=ClearTable)
+add_button("Delete row 6", callback=delete_row_call)
+add_button("Delete col 1", callback=delete_col_call)
+add_button("Add row ", callback=add_row_call)
+add_button("Add col ", callback=add_col_call)
+add_button("Insert row 5", callback=insert_row_call)
+add_button("Insert col 1 ", callback=insert_col_call)
+add_button("Clear Table ", callback=clear_table_call)
 add_table("Table##widget", ["Column 1", "Column 2", "Column 3", "Column 4"])
 
 tabledata = []

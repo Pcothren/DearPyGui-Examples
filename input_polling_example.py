@@ -24,6 +24,7 @@ add_label_text("Left Mouse Released", value="False", color=[0, 200, 255])
 add_label_text("Middle Mouse Released", value="False", color=[0, 200, 255])
 add_label_text("Right Mouse Released", value="False", color=[0, 200, 255])
 
+
 def main_callback(sender, data):
 
     set_value("Mouse Position", str(get_mouse_pos()))
@@ -123,6 +124,7 @@ def main_callback(sender, data):
         set_value("Middle Mouse Released", "True")
     else:
         set_value("Middle Mouse Released", "False")
+
 
 set_render_callback(main_callback)
 

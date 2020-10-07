@@ -1,8 +1,10 @@
 from dearpygui.core import *
 from dearpygui.simple import *
-show_logger()
-def window_creator(sender, data):
 
+show_logger()
+
+
+def window_creator(sender, data):
     title = get_value("Window Title##input")
     width = get_value("Width")
     height = get_value("Height")
@@ -16,9 +18,9 @@ def window_creator(sender, data):
     if title_bar:
         show_item("Close Window")
 
-    with window(title, width, height, x_pos=start_x, y_pos=start_y,
-               autosize=autosize, no_resize=resizable, no_title_bar=title_bar,
-               no_move=movable, on_close=on_window_close):
+    with window(title, width=width, height=height, x_pos=start_x, y_pos=start_y,
+                autosize=autosize, no_resize=resizable, no_title_bar=title_bar,
+                no_move=movable, on_close=on_window_close):
         for i in range(0, 10):
             add_button("button" + str(i))
 
@@ -34,6 +36,7 @@ def close_window(sender, data):
     show_item("Create Window")
     hide_item("Close Window")
     delete_item(get_value("Window Title##input"))
+
 
 add_input_text("Window Title##input", default_value="Window Title")
 add_input_int("Width", default_value=400)

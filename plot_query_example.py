@@ -3,6 +3,7 @@ from dearpygui.simple import *
 from math import sin, cos, tan, factorial, exp, log, sqrt, log1p, log2, log10, acos, asin, atan, atan2, acosh, asinh
 from math import atanh, e, pi, fmod, expm1, pow, hypot, degrees, radians,erf, erfc, gamma, lgamma, fabs
 
+
 # callbacks
 def query(sender, data):
     show_item("Plot Window")
@@ -10,15 +11,15 @@ def query(sender, data):
     set_plot_ylimits("Plot2", data[2], data[3])
 
 
-def run_code(Y, xmin, xmax, inc=100):
-    Y = str(Y)
+def run_code(y, xmin, xmax, inc=100):
+    y = str(y)
     code0 = "def tempfunc():\n"
     code8 = "    xmin =" + str(xmin) + "\n"
     code9 = "    xmax =" + str(xmax) + "\n"
     code1 = "    data = []\n"
     code2 = "    x = xmin\n"
     code3 = "    for i in range(0," + str(inc) + "+1):\n"
-    code4 = "        y=" + Y + "\n"
+    code4 = "        y=" + y + "\n"
     code5 = "        data.append([x,y])\n"
     code6 = "        x = xmin + (1+i)*(xmax-xmin)/float(" + str(inc) + ")\n"
     code7 = "    return data"
@@ -44,6 +45,7 @@ def plot_callback(sender, data):
     add_scatter_series("Plot1", "Y1 Scatter", data1, weight=2, outline=get_value("Color"), fill=get_value("Fill"))
     add_line_series("Plot2", "Y1", data1, weight=2, color=get_value("Color"))
     add_scatter_series("Plot2", "Y1 Scatter", data1, weight=2, outline=get_value("Color"), fill=get_value("Fill"))
+
 
 with group("Left Panel", width=200):
     add_button("Plot data", callback=plot_callback)

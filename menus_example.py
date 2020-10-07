@@ -1,8 +1,10 @@
 from dearpygui.core import *
 from dearpygui.simple import *
 
+
 def theme_callback(sender, data):
     set_theme(sender)
+
 
 add_menu_bar("MenuBar")
 
