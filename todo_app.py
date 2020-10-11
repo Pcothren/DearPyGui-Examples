@@ -7,7 +7,7 @@ class TodoApp:
         self.todos = todos
 
         
-    def __render__(self, sender, data):
+    def __render(self, sender, data):
         """Run every frame to update the GUI.
 
         Updates the table by clearing it and inserting rows with the data.
@@ -17,7 +17,7 @@ class TodoApp:
             dpg.add_row('Todos', [todo['id'], todo['content'], todo['done']])
             
 
-    def __add_todo__(self, sender, data):
+    def __add_todo(self, sender, data):
         """Add a new todo.
 
         Get the data from the input text, append a new todo to the todos list
@@ -29,7 +29,7 @@ class TodoApp:
         dpg.set_value('new-todo-title', '')
 
 
-    def __toggle_todo__(self, sender, data):
+    def __toggle_todo(self, sender, data):
         """Toggle a todo to True of False.
 
         Get the selected cell of the table (list of [row index, column index])
@@ -44,13 +44,13 @@ class TodoApp:
         dpg.set_value('Selected todo:', f"Selected id: {todo['id']}")
 
 
-    def __remove_todo__(self, sender, data):
+    def __remove_todo(self, sender, data):
         """Remove a todo from the todos list based on the selected row."""
         todo_index = dpg.get_data('selected-todo-index')
         self.todos.pop(todo_index)
 
 
-    def __clear_todos__(self, sender, data):
+    def __clear_todos(self, sender, data):
         """Clear all the todos."""
         self.todos = []
 
@@ -71,18 +71,18 @@ class TodoApp:
 
         dpg.add_spacing(count=10)
         dpg.add_input_text("New Todo Title", source="new-todo-title")
-        dpg.add_button("Add todo", callback=self.__add_todo__)
+        dpg.add_button("Add todo", callback=self.__add_todo)
         dpg.add_spacing(count=10)
         dpg.add_separator()
 
-        dpg.add_table('Todos', ['ID', 'Content', 'Done'], height=200, callback=self.__toggle_todo__)
+        dpg.add_table('Todos', ['ID', 'Content', 'Done'], height=200, callback=self.__toggle_todo)
         dpg.add_separator()
         dpg.add_text("Selected todo:")
-        dpg.add_button("Remove todo", callback=self.__remove_todo__)
-        dpg.add_button("Clear todos", callback=self.__clear_todos__)
+        dpg.add_button("Remove todo", callback=self.__remove_todo)
+        dpg.add_button("Clear todos", callback=self.__clear_todos)
 
         # Render Callback and Start gui
-        dpg.set_render_callback(self.__render__)
+        dpg.set_render_callback(self.__render)
         dpg.start_dearpygui()
 
 
