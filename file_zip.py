@@ -62,7 +62,7 @@ class FileZipApp:
             total_progress = len(self.files_list)
             for f in self.files_list:
                 full_path = f['path'] + "\\" + f['name']
-                zip_file.write(full_path)
+                zip_file.write(full_path, f['name'])
 
                 # Update progress bar
                 current_progress += 1
