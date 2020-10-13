@@ -14,7 +14,7 @@ from the cloned repo directory on your computer.
  
  ---
  
-## Contributions
+## Contribute
 Requirements for new examples:
 - Be complete. It's okay to wait. Falling behind in commits to this repository is easily resolved as every example is an isolated app.
 - Breif explination of features that are highlighted in the example. Preferably use text or treenode(bullet) widgets.
