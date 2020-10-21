@@ -17,13 +17,13 @@ def update(sender, data):
                    uv_max=[get_data("TextureCoordinates")[2], get_data("TextureCoordinates")[3]])
     print(get_data("TextureCoordinates"))
 
+with window("Main Window"):
+    add_slider_float2("uv_min", default_value=[0, 0], callback=update, min_value=-2, max_value=2)
+    add_slider_float2("uv_max", default_value=[1, 1], callback=update, min_value=-2, max_value=2)
 
-add_slider_float2("uv_min", default_value=[0, 0], callback=update, min_value=-2, max_value=2)
-add_slider_float2("uv_max", default_value=[1, 1], callback=update, min_value=-2, max_value=2)
-
-add_data("TextureCoordinates", [0, 0, 1, 1])
-add_image("image_1", "SpriteMapExample.png",
-          uv_min=[get_data("TextureCoordinates")[0], get_data("TextureCoordinates")[1]],
-          uv_max=[get_data("TextureCoordinates")[2], get_data("TextureCoordinates")[3]])
+    add_data("TextureCoordinates", [0, 0, 1, 1])
+    add_image("image_1", "SpriteMapExample.png",
+              uv_min=[get_data("TextureCoordinates")[0], get_data("TextureCoordinates")[1]],
+              uv_max=[get_data("TextureCoordinates")[2], get_data("TextureCoordinates")[3]])
 show_logger()
-start_dearpygui()
+start_dearpygui(primary_window="Main Window")

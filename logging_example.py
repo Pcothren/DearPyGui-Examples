@@ -15,10 +15,11 @@ def log_callback(sender, data):
     log_error("Error Message")
 
 
-add_button("Test Logger", callback=log_callback)
-add_same_line(spacing=10)
-with group("LoggingGroup"):
-    add_text("Log Level")
-    add_radio_button("Log Level##logging", items=["Trace", "Debug", "Info", "Warning", "Error", "Off"])
+with window("Main Window"):
+    add_button("Test Logger", callback=log_callback)
+    add_same_line(spacing=10)
+    with group("LoggingGroup"):
+        add_text("Log Level")
+        add_radio_button("Log Level##logging", items=["Trace", "Debug", "Info", "Warning", "Error", "Off"])
 
-start_dearpygui()
+start_dearpygui(primary_window="Main Window")

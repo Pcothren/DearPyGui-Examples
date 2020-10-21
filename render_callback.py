@@ -71,30 +71,31 @@ def render(sender, data):
 
 
 set_main_window_size(800, 800)
-add_data("center", [25, 25])
-add_data("horizontal direction", "right")
-add_data("vertical direction", "up")
+with window("Main Window"):
+    add_data("center", [25, 25])
+    add_data("horizontal direction", "right")
+    add_data("vertical direction", "up")
 
-add_text("Tips")
-add_text("The render callback is ran every frame.", bullet=True)
-add_text("The handler keyword is to tell the render callback which frame needs to be active to run.", bullet=True)
-add_text("Delta time is the time between frames.", bullet=True)
-add_text("If delta time is checked, the position calculation uses real time (speed in pixel per second)", bullet=True)
-add_text("If delta time is not checked, the position calculation is frame rate based(speed in pixel per frame)",
-         bullet=True)
-add_text("The threshold in the mouse drag callback is the distance a drag needs to be (in pixels) to register.",
-         bullet=True)
+    add_text("Tips")
+    add_text("The render callback is ran every frame.", bullet=True)
+    add_text("The handler keyword is to tell the render callback which frame needs to be active to run.", bullet=True)
+    add_text("Delta time is the time between frames.", bullet=True)
+    add_text("If delta time is checked, the position calculation uses real time (speed in pixel per second)", bullet=True)
+    add_text("If delta time is not checked, the position calculation is frame rate based(speed in pixel per frame)",
+             bullet=True)
+    add_text("The threshold in the mouse drag callback is the distance a drag needs to be (in pixels) to register.",
+             bullet=True)
 
-add_spacing()
-add_separator()
-add_spacing()
+    add_spacing()
+    add_separator()
+    add_spacing()
 
-add_slider_int("Horizontal Speed", default_value=1)
-add_slider_int("Vertical Speed", default_value=1)
-add_checkbox("Use Delta Time")
-add_checkbox("Use Vsync", default_value=1)
-add_progress_bar("Center X", default_value=0, overlay="x position")
-add_progress_bar("Center Y", default_value=0, overlay="y position")
+    add_slider_int("Horizontal Speed", default_value=1)
+    add_slider_int("Vertical Speed", default_value=1)
+    add_checkbox("Use Delta Time")
+    add_checkbox("Use Vsync", default_value=1)
+    add_progress_bar("Center X", default_value=0, overlay="x position")
+    add_progress_bar("Center Y", default_value=0, overlay="y position")
 
 with window("Canvas Window", width=320, height=340):
     add_drawing("Canvas", width=301, height=301)
@@ -105,5 +106,5 @@ set_render_callback(render)
 set_render_callback(render)
 set_mouse_drag_callback(drag_callback, 10)
 
-start_dearpygui()
+start_dearpygui(primary_window="Main Window")
 

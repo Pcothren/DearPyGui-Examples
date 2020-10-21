@@ -46,20 +46,20 @@ def plot_callback(sender, data):
     add_line_series("Plot2", "Y1", data1, weight=2, color=get_value("Color"))
     add_scatter_series("Plot2", "Y1 Scatter", data1, weight=2, outline=get_value("Color"), fill=get_value("Fill"))
 
+with window("Main Window"):
+    with group("Left Panel", width=200):
+        add_button("Plot data", callback=plot_callback)
+        add_input_text("Y1", default_value="40*sin(x)")
+        add_input_int("Points", default_value=300, callback=plot_callback)
+        add_input_float2("Range", default_value=[-10, 10], callback=plot_callback)
+        add_spacing(count=5)
+        add_color_picker4("Color", default_value=[255, 0, 0, 255], callback=plot_callback)
+        add_color_picker4("Fill", default_value=[255, 0, 0, 100], callback=plot_callback)
 
-with group("Left Panel", width=200):
-    add_button("Plot data", callback=plot_callback)
-    add_input_text("Y1", default_value="40*sin(x)")
-    add_input_int("Points", default_value=300, callback=plot_callback)
-    add_input_float2("Range", default_value=[-10, 10], callback=plot_callback)
-    add_spacing(count=5)
-    add_color_picker4("Color", default_value=[255, 0, 0, 255], callback=plot_callback)
-    add_color_picker4("Fill", default_value=[255, 0, 0, 100], callback=plot_callback)
-
-add_same_line()
-add_plot("Plot1", height=-1, query_callback=query)
+    add_same_line()
+    add_plot("Plot1", height=-1, query_callback=query)
 
 with window("Plot Window", width=500, height=500, show=False):
-    add_plot("Plot2", height=-1)
+        add_plot("Plot2", height=-1)
 
-start_dearpygui()
+start_dearpygui(primary_window="Main Window")

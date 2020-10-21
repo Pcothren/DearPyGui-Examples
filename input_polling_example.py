@@ -1,28 +1,29 @@
 from dearpygui.core import *
 from dearpygui.simple import *
 
-add_text("Key Polling")
-add_label_text("A key Down", value="False", color=[0, 200, 255])
-add_label_text("W key Pressed", value="False", color=[0, 200, 255])
-add_label_text("Q key Released", value="False", color=[0, 200, 255])
-add_spacing()
-add_text("Mouse Polling")
-add_label_text("Mouse Position", value="(0,0)", color=[0, 200, 255])
-add_label_text("Left Mouse Dragging", value="False", color=[0, 200, 255])
-add_label_text("Middle Mouse Dragging", value="False", color=[0, 200, 255])
-add_label_text("Right Mouse Dragging", value="False", color=[0, 200, 255])
-add_label_text("Left Mouse Clicked", value="False", color=[0, 200, 255])
-add_label_text("Middle Mouse Clicked", value="False", color=[0, 200, 255])
-add_label_text("Right Mouse Clicked", value="False", color=[0, 200, 255])
-add_label_text("Left Mouse Double Clicked", value="False", color=[0, 200, 255])
-add_label_text("Middle Mouse Double Clicked", value="False", color=[0, 200, 255])
-add_label_text("Right Mouse Double Clicked", value="False", color=[0, 200, 255])
-add_label_text("Left Mouse Down", value="False", color=[0, 200, 255])
-add_label_text("Middle Mouse Down", value="False", color=[0, 200, 255])
-add_label_text("Right Mouse Down", value="False", color=[0, 200, 255])
-add_label_text("Left Mouse Released", value="False", color=[0, 200, 255])
-add_label_text("Middle Mouse Released", value="False", color=[0, 200, 255])
-add_label_text("Right Mouse Released", value="False", color=[0, 200, 255])
+with window("Main Window"):
+    add_text("Key Polling")
+    add_label_text("A key Down", default_value="False", color=[0, 200, 255])
+    add_label_text("W key Pressed", default_value="False", color=[0, 200, 255])
+    add_label_text("Q key Released", default_value="False", color=[0, 200, 255])
+    add_spacing()
+    add_text("Mouse Polling")
+    add_label_text("Mouse Position", default_value="(0,0)", color=[0, 200, 255])
+    add_label_text("Left Mouse Dragging", default_value="False", color=[0, 200, 255])
+    add_label_text("Middle Mouse Dragging", default_value="False", color=[0, 200, 255])
+    add_label_text("Right Mouse Dragging", default_value="False", color=[0, 200, 255])
+    add_label_text("Left Mouse Clicked", default_value="False", color=[0, 200, 255])
+    add_label_text("Middle Mouse Clicked", default_value="False", color=[0, 200, 255])
+    add_label_text("Right Mouse Clicked", default_value="False", color=[0, 200, 255])
+    add_label_text("Left Mouse Double Clicked", default_value="False", color=[0, 200, 255])
+    add_label_text("Middle Mouse Double Clicked", default_value="False", color=[0, 200, 255])
+    add_label_text("Right Mouse Double Clicked", default_value="False", color=[0, 200, 255])
+    add_label_text("Left Mouse Down", default_value="False", color=[0, 200, 255])
+    add_label_text("Middle Mouse Down", default_value="False", color=[0, 200, 255])
+    add_label_text("Right Mouse Down", default_value="False", color=[0, 200, 255])
+    add_label_text("Left Mouse Released", default_value="False", color=[0, 200, 255])
+    add_label_text("Middle Mouse Released", default_value="False", color=[0, 200, 255])
+    add_label_text("Right Mouse Released", default_value="False", color=[0, 200, 255])
 
 
 def main_callback(sender, data):
@@ -128,4 +129,4 @@ def main_callback(sender, data):
 
 set_render_callback(main_callback)
 
-start_dearpygui()
+start_dearpygui(primary_window="Main Window")

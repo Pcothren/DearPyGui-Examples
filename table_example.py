@@ -30,24 +30,24 @@ def insert_row_call(sender, data):
 def insert_col_call(sender, data):
     insert_column("Table##widget", 1, "Inserted Column", ["inew1", "inew2", "inew3", "inew4"])
 
+with window("Main Window"):
+    # tables
+    add_button("Delete row 6", callback=delete_row_call)
+    add_button("Delete col 1", callback=delete_col_call)
+    add_button("Add row ", callback=add_row_call)
+    add_button("Add col ", callback=add_col_call)
+    add_button("Insert row 5", callback=insert_row_call)
+    add_button("Insert col 1 ", callback=insert_col_call)
+    add_button("Clear Table ", callback=clear_table_call)
+    add_table("Table##widget", ["Column 1", "Column 2", "Column 3", "Column 4"])
 
-# tables
-add_button("Delete row 6", callback=delete_row_call)
-add_button("Delete col 1", callback=delete_col_call)
-add_button("Add row ", callback=add_row_call)
-add_button("Add col ", callback=add_col_call)
-add_button("Insert row 5", callback=insert_row_call)
-add_button("Insert col 1 ", callback=insert_col_call)
-add_button("Clear Table ", callback=clear_table_call)
-add_table("Table##widget", ["Column 1", "Column 2", "Column 3", "Column 4"])
+    tabledata = []
+    for i in range(0, 10):
+        row = []
+        for j in range(0, 4):
+            row.append("Item" + str(i) + "-" + str(j))
+        tabledata.append(row)
 
-tabledata = []
-for i in range(0, 10):
-    row = []
-    for j in range(0, 4):
-        row.append("Item" + str(i) + "-" + str(j))
-    tabledata.append(row)
+    set_table_data("Table##widget", tabledata)
 
-set_table_data("Table##widget", tabledata)
-
-start_dearpygui()
+start_dearpygui(primary_window="Main Window")
