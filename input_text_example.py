@@ -33,6 +33,6 @@ with window("Main Window"):
     add_input_text("Password##inputtext", password=True)
     add_input_text("Multiline##inputtext", multiline=True)
 
-add_button("Retrieve", callback=retrieve_callback)
+    add_button("Retrieve", callback=retrieve_callback)
 
 start_dearpygui(primary_window="Main Window")
