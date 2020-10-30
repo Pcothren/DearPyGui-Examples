@@ -26,6 +26,7 @@ Requirements for new examples:
 ## Resources  
 - [Tutorials](https://hoffstadt.github.io/DearPyGui/tutorial.html) for getting started.
 - [Online Documentation](https://hoffstadt.github.io/DearPyGui/) for official documentation.
+- [Videos of creating the examples](https://www.youtube.com/channel/UCTMnJIjIB-h1hO6AvqG4KQw/)
 - Internal Documentation: Run the **show_documentation** command from within the library to view an reference guide. 
  
  ---
