@@ -1,13 +1,5 @@
-*
-!*.yml
-!*.py
-!*.json
-!*.png
-!*.jpg
 !.gitignore
-!requirements.txt
-!README.md
-!LICENSE
-!sample oop wrappings/
-!.github/
-!docs/
+.vscode
+.idea
+.git
+.github
