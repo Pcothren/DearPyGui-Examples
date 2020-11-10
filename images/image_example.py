@@ -1,29 +1,14 @@
 from dearpygui.core import *
 from dearpygui.simple import *
 
+show_debug()
 
-# callback
-def update(sender, data):
-    uvmin = get_value("uv_min")
-    uvmax = get_value("uv_max")
-    uvminx = uvmin[0]
-    uvminy = uvmin[1]
-    uvmaxx = uvmax[0]
-    uvmaxy = uvmax[1]
+def displayRuntime(sender, data):
+    clear_drawing("canvas")
+    draw_image("canvas", "SpriteMapExample.png", [0, 0], pmax=[416, 384])
 
-    add_data("TextureCoordinates", [uvminx, uvminy, uvmaxx, uvmaxy])
-    configure_item("image_1",
-                   uv_min=[get_data("TextureCoordinates")[0], get_data("TextureCoordinates")[1]],
-                   uv_max=[get_data("TextureCoordinates")[2], get_data("TextureCoordinates")[3]])
-    print(get_data("TextureCoordinates"))
+with window("Main"):
+    add_drawing("canvas", width=416, height=384, parent="Main")
+    set_render_callback(displayRuntime)
 
-with window("Main Window"):
-    add_slider_float2("uv_min", default_value=[0, 0], callback=update, min_value=-2, max_value=2)
-    add_slider_float2("uv_max", default_value=[1, 1], callback=update, min_value=-2, max_value=2)
-
-    add_data("TextureCoordinates", [0, 0, 1, 1])
-    add_image("image_1", "SpriteMapExample.png",
-              uv_min=[get_data("TextureCoordinates")[0], get_data("TextureCoordinates")[1]],
-              uv_max=[get_data("TextureCoordinates")[2], get_data("TextureCoordinates")[3]])
-show_logger()
-start_dearpygui(primary_window="Main Window")
+start_dearpygui(primary_window="Main")
