@@ -37,7 +37,6 @@ with window("Main Window"):
     add_text("If you click 'Start Long Asyncronous Process', you should see the frame rate should "
              "not be affected.", bullet=True)
     add_text("To run an asyncronous function, use 'run_async_function'.", bullet=True)
-    add_text("Currently, dearpygui functions can't be ran inside the asyncronous function.", bullet=True)
     add_text("If you need to return something from the asyncronous function, just return it like normal"
              " and use the 'return_handler' keyword. "
              "The return handler is another function that is called (on the main thread)"
