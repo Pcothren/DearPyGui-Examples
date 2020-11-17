@@ -23,11 +23,11 @@ class SmartTable:
         with managed_columns(f"{self.name}_{self.row}", len(row_content)):
             for item in row_content:
                 if type(item) is str:
-                    add_input_text(f"##{self.name}_{self.row}_{self.column}", default_value=item)
+                    add_input_text(f"##{self.name}_{self.row}_{self.column}", default_value=item, width=-1)
                 if type(item) is int:
-                    add_input_int(f"##{self.name}_{self.row}_{self.column}", default_value=item)
+                    add_input_int(f"##{self.name}_{self.row}_{self.column}", default_value=item, width=-1, step=0)
                 if type(item) is float:
-                    add_input_float(f"##{self.name}_{self.row}_{self.column}", default_value=item, step=0)
+                    add_input_float(f"##{self.name}_{self.row}_{self.column}", default_value=item, width=-1, step=0)
                 self.column += 1
         self.column = 0
         self.row += 1
