@@ -13,17 +13,21 @@ def colormap_callback(sender, data):
 def plot_callback(sender, data):
     clear_plot("Plot")
 
-    data1 = []
+    data1x = []
+    data1y = []
     for i in range(0, 100):
-        data1.append([3.14 * i / 180, cos(3 * 3.14 * i / 180)])
+        data1x.append(3.14 * i / 180)
+        data1y.append(cos(3 * 3.14 * i / 180))
 
-    data2 = []
+    data2x = []
+    data2y = []
     for i in range(0, 100):
-        data2.append([3.14 * i / 180, sin(2 * 3.14 * i / 180)])
+        data2x.append(3.14 * i / 180)
+        data2y.append(sin(2 * 3.14 * i / 180))
 
-    add_line_series("Plot", "Cos", data1, weight=2)
-    add_shade_series("Plot", "Cos", data1, weight=2, fill=[255, 0, 0, 100], color=[255, 0, 0, 100])
-    add_scatter_series("Plot", "Sin", data2)
+    add_line_series("Plot", "Cos", data1x, data1y, weight=2)
+    add_shade_series("Plot", "Cos", data1x, data1y, y2=[0.0]*100, weight=2, fill=[255, 0, 0, 100], color=[255, 0, 0, 100])
+    add_scatter_series("Plot", "Sin", data2x, data2y)
 
 with window("Main Window"):
     with tab_bar("PlotTabBar"):
@@ -48,3 +52,4 @@ with window("Main Window"):
                             height=180, histogram=True)
 
 start_dearpygui(primary_window="Main Window")
+
