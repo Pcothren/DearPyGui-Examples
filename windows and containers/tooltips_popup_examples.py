@@ -15,7 +15,7 @@ with window("Main Window"):
         add_button("Close Window##modal", callback=close, callback_data="ModalPopup")
 
     add_text("Right Click Me")
-    with popup("Right Click Me", "RegularPopup"):
+    with popup("Right Click This Text", "RegularPopup"):
         add_simple_plot("Simpleplot##popup", value=[0.3, 0.9, 2.5, 8.9], height=80)
 
 start_dearpygui(primary_window="Main Window")
