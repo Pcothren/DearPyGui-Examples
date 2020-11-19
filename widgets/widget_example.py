@@ -1,6 +1,7 @@
 from dearpygui.core import *
 from dearpygui.simple import *
 
+show_documentation()
 
 # callback
 def retrieve_values(sender, data):
