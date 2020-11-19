@@ -1,16 +1,35 @@
+
+<a id="user-content-dear-pygui" class="anchor" aria-hidden="true" href="#Dear-PyGui-Examples">
+ 
+<p align="center">
+  <img src="https://github.com/hoffstadt/DearPyGui/blob/assets/newlogo.jpg?raw=true" alt="Dear PyGui">
+</p>
+
+</a>
+
+<sub>(This repo is available under a free and permissive license)</sub>
+
 # Dear PyGui-Examples
 This is a repo for examples that demonstrate the abilities of the python UI library [DearPyGui](https://github.com/hoffstadt/DearPyGui).
- 
- ---
- 
-## Requests
-If you would like to see an example case for a topic not already covered please create an issue with a detailed detailed description outlining the example.
  
  ---
  
 ## Build
 To install required dependencies run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` 
 from the cloned repo directory on your computer.
+ 
+ ---
+ 
+ ## Resources  
+- [Tutorials](https://hoffstadt.github.io/DearPyGui/tutorial.html) for getting started.
+- [Online Documentation](https://hoffstadt.github.io/DearPyGui/) for official documentation.
+- [Videos of creating the examples](https://www.youtube.com/channel/UCTMnJIjIB-h1hO6AvqG4KQw/)
+- Internal Documentation: Run the **show_documentation()** command from within the library to view an reference guide. 
+ 
+ ---
+ 
+ ## Requests
+If you would like to see an example case for a topic not already covered please create an issue with a detailed detailed description outlining the example.
  
  ---
  
@@ -23,13 +42,6 @@ Requirements for new examples:
  
  ---
  
-## Resources  
-- [Tutorials](https://hoffstadt.github.io/DearPyGui/tutorial.html) for getting started.
-- [Online Documentation](https://hoffstadt.github.io/DearPyGui/) for official documentation.
-- [Videos of creating the examples](https://www.youtube.com/channel/UCTMnJIjIB-h1hO6AvqG4KQw/)
-- Internal Documentation: Run the **show_documentation** command from within the library to view an reference guide. 
- 
- ---
 ## Support
 If you are having issues or want to help, here are some places you can go:
 - [Discord Forum](https://discord.gg/tyE7Gu4)
