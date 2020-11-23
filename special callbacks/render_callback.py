@@ -103,7 +103,6 @@ with window("Canvas Window", width=320, height=340):
     draw_rectangle("Canvas", [0, 1], [300, 300], color=[0, 0, 255], fill=[0, 0, 255, 50], tag="background")
 
 set_render_callback(render)
-set_render_callback(render)
 set_mouse_drag_callback(drag_callback, 10)
 
 start_dearpygui(primary_window="Main Window")
