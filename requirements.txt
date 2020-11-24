@@ -1,1 +1,1 @@
-dearpygui==0.6.11
+dearpygui==0.6.15
