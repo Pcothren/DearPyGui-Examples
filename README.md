@@ -10,10 +10,12 @@
 <sub>(This repo is available under a free and permissive license)</sub>
 
 # Dear PyGui-Examples
-This is a repo for examples that demonstrate the abilities of the python UI library [DearPyGui](https://github.com/hoffstadt/DearPyGui).\
-[DPG Docs example page](https://hoffstadt.github.io/DearPyGui/examples.html) Is a Directory including GIF of every example.
+This is a repo for examples that demonstrate the abilities of the python UI library [DearPyGui](https://github.com/hoffstadt/DearPyGui).
  
  ---
+ 
+## Repo Directory
+[DPG Docs example page](https://hoffstadt.github.io/DearPyGui/examples.html) Is a Directory including GIF of every example.
  
 ## Build
 To install required dependencies run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` 
