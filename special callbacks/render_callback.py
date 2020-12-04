@@ -6,7 +6,7 @@ from dearpygui.simple import *
 def drag_callback(sender, data):
     pos = get_mouse_pos(local=True)
     height = get_item_height("Canvas Window")
-    add_data("center", [pos[0], -pos[1]+height-40])
+    add_data("center", [pos[0], pos[1]])
 
 
 def render(sender, data):
@@ -21,14 +21,12 @@ def render(sender, data):
     height = get_item_height("Canvas Window")
     x = center[0]
     y = center[1]
-    set_value("Center X", x/(width-20))
-    set_value("Center Y", y/(height-40))
-    set_drawing_size("Canvas", width-19, height-39)
-
-    draw_rectangle("Canvas", [0, 1], [width-20, height-40], color=[0, 0, 255], fill=[0, 0, 255, 50], tag="background")
+    set_value("Center X", x/(width))
+    set_value("Center Y", y/(height))
+    set_drawing_size("Canvas", width-20, height-40)
 
     # check if ball is crossing x boundary
-    if x + 25 > width-20:
+    if x + 25 > width:
         horizontal_direction = "left"
     if x - 25 < 0:
         horizontal_direction = "right"
@@ -46,7 +44,7 @@ def render(sender, data):
             x += hspeed
 
     # check if ball is crossing y boundary
-    if y + 25 > height-40:
+    if y + 25 > height:
         vertical_direction = "down"
     if y - 25 < 1:
         vertical_direction = "up"
@@ -63,7 +61,7 @@ def render(sender, data):
         else:
             y += vspeed
 
-    draw_circle("Canvas", [x, y], 25, [255, 100, 0], fill=[255, 100, 0], segments=20, tag="ball")
+    modify_draw_command("Canvas", "ball", center=[x, y], radius=25, color=[255, 100, 0], fill=[255, 100, 0], segments=20)
 
     add_data("center", [x, y])
     add_data("horizontal direction", horizontal_direction)
@@ -99,8 +97,8 @@ with window("Main Window"):
 
 with window("Canvas Window", width=320, height=340):
     add_drawing("Canvas", width=301, height=301)
+    draw_rectangle("Canvas", [0, 1], [300, 300], color=[0, 0, 255], fill=[0, 0, 255, 100], tag="background")
     draw_circle("Canvas", [25, 25], 25, [255, 100, 0], fill=[255, 100, 0], segments=20, tag="ball")
-    draw_rectangle("Canvas", [0, 1], [300, 300], color=[0, 0, 255], fill=[0, 0, 255, 50], tag="background")
 
 set_render_callback(render)
 set_mouse_drag_callback(drag_callback, 10)
