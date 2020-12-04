@@ -17,6 +17,8 @@ This is a repo for examples that demonstrate the abilities of the python UI libr
 ## Repo Directory
 [DPG Docs example page](https://hoffstadt.github.io/DearPyGui/examples.html) Is a Directory including GIF of every example.
  
+  ---
+  
 ## Build
 To install required dependencies run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` 
 from the cloned repo directory on your computer.
