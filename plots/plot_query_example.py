@@ -39,12 +39,18 @@ def plot_callback(sender, data):
     clear_plot("Plot2")
 
     ranges = get_value("Range")
-    data1 = data = run_code(get_value("Y1"), ranges[0], ranges[1], get_value("Points"))
+    data1 = run_code(get_value("Y1"), ranges[0], ranges[1], get_value("Points"))
 
-    add_line_series("Plot1", "Y1", data1, weight=2, color=get_value("Color"))
-    add_scatter_series("Plot1", "Y1 Scatter", data1, weight=2, outline=get_value("Color"), fill=get_value("Fill"))
-    add_line_series("Plot2", "Y1", data1, weight=2, color=get_value("Color"))
-    add_scatter_series("Plot2", "Y1 Scatter", data1, weight=2, outline=get_value("Color"), fill=get_value("Fill"))
+    x_data = []
+    y_data = []
+    for data in data1:
+        x_data.append(data[0])
+        y_data.append(data[1])
+
+    add_line_series("Plot1", "Y1", x_data, y_data, weight=2, color=get_value("Color"))
+    add_scatter_series("Plot1", "Y1 Scatter", x_data, y_data, weight=2, outline=get_value("Color"), fill=get_value("Fill"))
+    add_line_series("Plot2", "Y1", x_data, y_data, weight=2, color=get_value("Color"))
+    add_scatter_series("Plot2", "Y1 Scatter", x_data, y_data, weight=2, outline=get_value("Color"), fill=get_value("Fill"))
 
 with window("Main Window"):
     with group("Left Panel", width=200):

@@ -14,7 +14,7 @@ with window("Main Window"):
         add_simple_plot("Simpleplot##modal", value=[0.3, 0.9, 2.5, 8.9], height=80)
         add_button("Close Window##modal", callback=close, callback_data="ModalPopup")
 
-    add_text("Right Click Me")
+    add_text("Right Click This Text", popup="RegularPopup")
     with popup("Right Click This Text", "RegularPopup"):
         add_simple_plot("Simpleplot##popup", value=[0.3, 0.9, 2.5, 8.9], height=80)
 
