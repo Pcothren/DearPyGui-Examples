@@ -11,7 +11,7 @@
 
 # Dear PyGui-Examples
 This is a repo for examples that demonstrate the abilities of the python UI library [DearPyGui](https://github.com/hoffstadt/DearPyGui).\
-A Directory and GIF of every example can be found on the [DPG Docs example page](https://hoffstadt.github.io/DearPyGui/examples.html)
+[DPG Docs example page](https://hoffstadt.github.io/DearPyGui/examples.html) Is a Directory including GIF of every example.
  
  ---
  
