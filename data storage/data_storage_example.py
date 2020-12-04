@@ -23,7 +23,7 @@ with window("Main Window", menubar=False):
     add_input_float3("Input Float3", default_value=[23, 42, 53, 255], source="color1")
     add_drag_float3("Drag Float3", min_value=0, max_value=255, speed=1, source="color1")
     add_slider_float3("Slider Float3", min_value=0, max_value=255, source="color1")
-    add_color_edit3("Color Edit3",source="color1")
+    add_color_edit3("Color Edit3", source="color1")
     add_color_picker3("Color Picker3", width=300, source="color1")
 
 start_dearpygui(primary_window="Main Window")
