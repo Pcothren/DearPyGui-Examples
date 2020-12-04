@@ -10,7 +10,8 @@
 <sub>(This repo is available under a free and permissive license)</sub>
 
 # Dear PyGui-Examples
-This is a repo for examples that demonstrate the abilities of the python UI library [DearPyGui](https://github.com/hoffstadt/DearPyGui).
+This is a repo for examples that demonstrate the abilities of the python UI library [DearPyGui](https://github.com/hoffstadt/DearPyGui).\
+A Directory and GIF of every example can be found on the [DPG Docs example page](https://hoffstadt.github.io/DearPyGui/examples.html)
  
  ---
  
@@ -23,7 +24,6 @@ from the cloned repo directory on your computer.
  ## Resources  
 - [Tutorials](https://hoffstadt.github.io/DearPyGui/tutorial.html) for getting started.
 - [Online Documentation](https://hoffstadt.github.io/DearPyGui/) for official documentation.
-- [Videos of creating the examples](https://www.youtube.com/channel/UCTMnJIjIB-h1hO6AvqG4KQw/)
 - Internal Documentation: Run the **show_documentation()** command from within the library to view an reference guide. 
  
  ---
