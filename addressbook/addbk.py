@@ -73,7 +73,6 @@ def save_callback(sender, data):
     cursor.execute(sqlite_insert_query, (tFN, tSN, tA1, tA2, tA3, tCI, tPC))
     con.commit()
     con.close()
-    pyautogui.hotkey('tab')
 
     # Clear previous input data:
     tFN = core.set_value("##fname", "")
