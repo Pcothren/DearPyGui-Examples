@@ -8,6 +8,11 @@ Uses one form to do add, delete, find and edit records.
 """
 import sqlite3
 from dearpygui import core, simple
+from dearpygui.core import *
+from dearpygui.simple import *
+import pandas as pd
+import sys
+import csv
 
 # Create the database if it does not exist:
 try:
@@ -53,8 +58,8 @@ finally:
         print("sqlite connection is closed")
 
 
-wid=500
-hgt=390
+wid=800
+hgt=600
 core.set_main_window_size(wid, hgt)
 
 core.add_additional_font("/usr/share/fonts/adobe-source-code-pro/SourceCodePro-Bold.otf", 25, "")
@@ -63,13 +68,13 @@ core.add_additional_font("/usr/share/fonts/adobe-source-code-pro/SourceCodePro-B
 def save_callback(sender, data):
 
     # Store Data to variables:
-    tFN = core.get_value("##fname")
-    tSN = core.get_value("##sname")
-    tA1 = core.get_value("##add1")
-    tA2 = core.get_value("##add2")
-    tCI = core.get_value("##city")
-    tPC = core.get_value("##pcode")
-    tTE = core.get_value("##tel")
+    tFN = core.get_value("##fname").strip()
+    tSN = core.get_value("##sname").strip()
+    tA1 = core.get_value("##add1").strip()
+    tA2 = core.get_value("##add2").strip()
+    tCI = core.get_value("##city").strip()
+    tPC = core.get_value("##pcode").strip()
+    tTE = core.get_value("##tel").strip()
 
 
     # Write to table:
@@ -82,7 +87,8 @@ def save_callback(sender, data):
     con.commit()
     con.close()
     clear_callback(1,1) # With dummy sender and data values. 
-
+    table_update()
+    
 # Clears the Data input fields     
 def clear_callback(sender, data):
     
@@ -107,18 +113,18 @@ def find_callback(sender, data):
 
     # Find if first name and surname supplied:
     if tFN != "" and tSN != "":
-       sqlite_insert_query = """SELECT * from address_data where fname LIKE ? and sname LIKE ?"""
+       sqlite_insert_query = """SELECT * from address_data where fname LIKE ? and sname LIKE ? COLLATE NOCASE"""
        cursor.execute(sqlite_insert_query, (tFN, tSN))
 
     # Find if first name only supplied:
     if tFN != "" and tSN == "":
-       sqlite_insert_query = """SELECT * from address_data where fname LIKE ?"""
-       print(sqlite_insert_query)       
+       con.set_trace_callback(print)
+       sqlite_insert_query = """SELECT * from address_data where fname LIKE ? COLLATE NOCASE"""
        cursor.execute(sqlite_insert_query, (tFN,))
 
     # Find if only surname supplied:   
     if tFN == "" and tSN != "":
-       sqlite_insert_query = """SELECT * from address_data where sname LIKE ?"""
+       sqlite_insert_query = """SELECT * from address_data where sname LIKE ? COLLATE NOCASE"""
        cursor.execute(sqlite_insert_query, (tSN,))
 
     # Return first matching record from query:       
@@ -134,7 +140,7 @@ def find_callback(sender, data):
         core.set_value("##add2",  record[4])
         core.set_value("##city",  record[5])
         core.set_value("##pcode", record[6])
-        core.set_value("##tel",  record[7])
+        core.set_value("##tel",   record[7])
     # Close database connection:
     con.commit()
     con.close()
@@ -187,7 +193,62 @@ def del_callback(sender, data):
     con.commit()
     con.close()
     clear_callback(1,1)
+    table_update()
 
+#Update the table from a Pandas data frame
+def table_update():
+    # TODO Display records in table (when I work out how)!!!! 
+
+    # Connect to database:
+    con = sqlite3.connect('addresses.db')
+    cursor = con.cursor()
+
+    # Setup the query string:
+    sql_sel_query = """SELECT fname, sname, tel from address_data"""
+
+    # TODO - work out how to reference the SQL query nativeley 
+    # cursor.execute(sql_sel_query)
+    # records = cursor.fetchall()
+    # print(records)
+    # [('Mickey', 'Mouse', '0111 111 1111'), ('aaaa', 'bbbb', 'gggg'), ('Elizabeth', 'Windsor', '01 234 56789')]
+
+    # Use Pandas to access the SQL query data
+    df = pd.read_sql_query(sql_sel_query,con)
+    print(df.head()) # Debug
+
+    # Create an index to find the number of records/columns:
+    index = df.index
+    nrows = len(index)
+    ncols = len(df.columns)
+
+    # Populate the table from the Pandas dataframe:
+    tabledata = []
+    for i in range(0, nrows):
+        row = []
+        for j in range(0, ncols):
+            row.append(df.iat[i,j])
+        tabledata.append(row)
+
+    set_table_data("Table##widget", tabledata)
+
+    # Close the database:
+    con.close()
+
+
+# Export the database to a CSV using Pandas:
+def export_callback(sender, data):
+
+    # Connect to Database: 
+    con = sqlite3.connect('addresses.db')
+    cursor = con.cursor()
+
+    # Setup query:
+    sql_sel_query = """SELECT * from address_data"""
+    # Execute
+    df = pd.read_sql(sql_sel_query, con)
+    # Write to CSV:
+    df.to_csv('export.csv')
+    
     
 with simple.window("Main Window"):
     # Create the text entry input boxes:
@@ -237,6 +298,13 @@ with simple.window("Main Window"):
     core.add_button("Clear", callback=clear_callback, tip="Clear fields")
     core.add_same_line()
     core.add_button("Delete", callback=del_callback, tip="Delete record")
+    core.add_same_line()
+    core.add_button("Export", callback=export_callback, tip="Export to CSV")
+
+    
+    add_table("Table##widget", ["First Name", "Surname", "Telephone Number"])
+    table_update()
+
  
 # Run the script:
 core.start_dearpygui(primary_window="Main Window")
