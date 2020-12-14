@@ -2,7 +2,8 @@
 """
 Author: Steve Fisher (xircon)
 Licence: MIT
-A simple python script using DearPyGui and Sqlite3.
+A simple python script using DearPyGui, pandas, and Sqlite3.
+requires " pip install pandas" if pandas is giving a sanity error on windows use "pip install pandas==1.19.3"
 Creates a database and table in the same directory as the script.
 Uses one form to do add, delete, find and edit records.
 """
