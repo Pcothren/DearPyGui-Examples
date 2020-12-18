@@ -1,8 +1,6 @@
 from dearpygui.core import *
 from dearpygui.simple import *
 
-show_logger()
-
 def widget_editor(sender, data):
     configure_item(
         "Test Button",

@@ -3,7 +3,10 @@
 Author: Steve Fisher (xircon)
 Licence: MIT
 A simple python script using DearPyGui, pandas, and Sqlite3.
-requires " pip install pandas" if pandas is giving a sanity error on windows use "pip install pandas==1.19.3"
+requires " pip install pandas"
+
+if numpy is giving a sanity error on windows use "pip install numpy==1.19.3"
+
 Creates a database and table in the same directory as the script.
 Uses one form to do add, delete, find and edit records.
 """
@@ -62,8 +65,6 @@ finally:
 wid=800
 hgt=600
 core.set_main_window_size(wid, hgt)
-
-core.add_additional_font("/usr/share/fonts/adobe-source-code-pro/SourceCodePro-Bold.otf", 25, "")
 
 
 def save_callback(sender, data):

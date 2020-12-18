@@ -26,7 +26,7 @@ def plot_callback(sender, data):
         data2y.append(sin(2 * 3.14 * i / 180))
 
     add_line_series("Plot", "Cos", data1x, data1y, weight=2)
-    add_shade_series("Plot", "Cos", data1x, data1y, y2=[0.0]*100, weight=2, fill=[255, 0, 0, 100], color=[255, 0, 0, 100])
+    add_shade_series("Plot", "Cos Area", data1x, data1y, y2=[0.0]*100, weight=2, fill=[255, 0, 0, 100])
     add_scatter_series("Plot", "Sin", data2x, data2y)
 
 with window("Main Window"):

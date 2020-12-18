@@ -1,8 +1,6 @@
 from dearpygui.core import *
 from dearpygui.simple import *
 
-show_logger()
-
 def window_editor(sender, data):
     if(does_item_exist("Test Window")):
         configure_item(
