@@ -26,8 +26,7 @@ from the cloned repo directory on your computer.
  ---
  
  ## Resources  
-- [Tutorials](https://hoffstadt.github.io/DearPyGui/tutorial.html) for getting started.
-- [Online Documentation](https://hoffstadt.github.io/DearPyGui/) for official documentation.
+- [Online Documentation](https://github.com/hoffstadt/DearPyGui/wiki) for comprehensive documentation examples and tutorials.
 - Internal Documentation: Run the **show_documentation()** command from within the library to view an reference guide. 
  
  ---
