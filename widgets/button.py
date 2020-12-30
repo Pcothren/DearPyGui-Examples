@@ -49,7 +49,6 @@ with window("Main Window"):
     add_button("Test Button",
         label=get_value("Label"),
         tip=get_value("Tip"),
-        popup="Popup",
         show=get_value("Show"),
         enabled=get_value("Enabled"),
         width=get_value("Width"),
