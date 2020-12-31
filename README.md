@@ -15,7 +15,7 @@ This is a repo for examples that demonstrate the abilities of the python UI libr
  ---
  
 ## Repo Directory
-[DPG Docs example page](https://hoffstadt.github.io/DearPyGui/examples.html) Is a Directory including GIF of every example.
+[DPG Docs example page](https://github.com/hoffstadt/DearPyGui/wiki/Examples) Is a Directory including GIF of every example.
  
   ---
   
