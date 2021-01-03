@@ -26,13 +26,13 @@ def plot_callback(sender, data):
     time = data_frame_read['time']
     data = data_frame_read['data']
 
-    # converting to floats because we stored using ints (if the data is already floats this is not necessary)
+    # converting getting it from the pandas series data item to a normal list
     data_x = []
     data_y = []
 
     for i in range(len(data)):
-        data_x.append(float(time[i]))
-        data_y.append(float(data[i]))
+        data_x.append(time[i])
+        data_y.append(data[i])
 
     # plot dataframe
     clear_plot("Plot")
