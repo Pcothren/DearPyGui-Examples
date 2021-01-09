@@ -22,7 +22,7 @@ def plot_callback(sender, data):
     # read cvs
     data_frame_read = pandas.read_csv('test_data.csv')
 
-    # getting data fromdata frame
+    # getting data from data frame
     time = data_frame_read['time']
     data = data_frame_read['data']
 
