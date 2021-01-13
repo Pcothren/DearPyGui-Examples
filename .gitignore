@@ -1,5 +1,10 @@
+# Not these files they are special
 !.gitignore
-.vscode
-.idea
-.git
-.github
+!requirements.txt
+
+# Virtual Environment
+venv/
+
+# Editor Configurations
+.vscode/
+.idea/
