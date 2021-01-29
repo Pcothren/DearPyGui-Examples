@@ -1,6 +1,5 @@
 from dearpygui.core import *
 from dearpygui.simple import *
-from math import cos, sin
 
 
 # callbacks
