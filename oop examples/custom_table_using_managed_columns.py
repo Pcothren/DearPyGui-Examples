@@ -83,5 +83,4 @@ with window("Main Window"):
     add_button("check values", callback=check_values)
 
 show_logger()
-show_debug()
 start_dearpygui(primary_window="Main Window")
