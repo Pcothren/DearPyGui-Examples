@@ -9,9 +9,9 @@
 
 <sub>(This repo is available under a free and permissive license)</sub>
 
-# (6/26/2021) Currently upgrading to DPG version 0.8.0 
-- will continue upgrading after our work on 0.8.0 is in full release
-- 0.6.x examples will be moved to 0.6.x branch of this repo after full release
+# (6/28/2021) Currently upgrading to DPG version 0.8.0 
+- will continue upgrading after during our work in 0.8.x
+- 0.6.x examples have been moved to 0.6.x branch of this repo
 
 # Dear PyGui-Examples
 This is a repo for examples that demonstrate the abilities of the python UI library [DearPyGui](https://github.com/hoffstadt/DearPyGui).
