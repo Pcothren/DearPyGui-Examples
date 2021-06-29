@@ -9,7 +9,7 @@
 
 <sub>(This repo is available under a free and permissive license)</sub>
 
-# (6/14/2021) Currently upgrading to DPG version 0.8.0 
+# (6/26/2021) Currently upgrading to DPG version 0.8.0 
 - will continue upgrading after our work on 0.8.0 is in full release
 - 0.6.x examples will be moved to 0.6.x branch of this repo after full release
 
