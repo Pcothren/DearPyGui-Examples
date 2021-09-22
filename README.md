@@ -9,8 +9,8 @@
 
 <sub>(This repo is available under a free and permissive license)</sub>
 
-# (6/28/2021) Currently upgrading to DPG version 0.8.0 
-- will continue upgrading after during our work in 0.8.x
+# (6/28/2021) Currently upgrading to DPG version 1.0.0 
+- will continue upgrading after during our work in 1.0.x
 - 0.6.x examples have been moved to 0.6.x branch of this repo
 
 # Dear PyGui-Examples
