@@ -9,7 +9,7 @@
 
 <sub>(This repo is available under a free and permissive license)</sub>
 
-# Docs are where examples are at [Read the Docs](https://dearpygui.readthedocs.io/en/latest/documentation/tables.html)
+# Docs are where examples are at [Read the Docs](https://dearpygui.readthedocs.io/en/latest/index.html)
 - we may turn this repo into a more complex examples in the future
  
   ---
