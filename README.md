@@ -9,9 +9,11 @@
 
 <sub>(This repo is available under a free and permissive license)</sub>
 
-# Docs are where examples are at [Read the Docs](https://dearpygui.readthedocs.io/en/latest/index.html)
+## Overview
+Docs are where basic dpg examples are at [Read the Docs](https://dearpygui.readthedocs.io/en/latest/index.html)
 
-This is a repository fo the example videos on [YouTube](https://www.youtube.com/channel/UCTMnJIjIB-h1hO6AvqG4KQw/featured)
+This is a repository for the example videos on [YouTube](https://www.youtube.com/channel/UCTMnJIjIB-h1hO6AvqG4KQw/featured)
+
 Archives is old 0.8 examples that will be upgraded in the future
 
   ---
