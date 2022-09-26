@@ -1,4 +1,4 @@
-dearpygui==1.6.2
+dearpygui==1.7.1
 opencv-python==4.5.4.58
 numpy==1.23.1
 pyzbar==0.1.9
