@@ -3,4 +3,4 @@ opencv-python==4.5.4.58
 numpy==1.23.1
 pyzbar==0.1.9
 qrcode==7.3.1
-Pillow==9.2.0
+Pillow==9.3.0
